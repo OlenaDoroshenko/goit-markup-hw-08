@@ -37,6 +37,7 @@ img {
 }
 
 .container {
+  background-color: yellowgreen;
   width: 100%;
   padding: 0 15px;
 }
