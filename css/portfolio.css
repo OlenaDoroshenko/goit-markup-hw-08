@@ -471,7 +471,7 @@ img {
 
 @media screen and (min-width: 480px) {
   .footer-input {
-    width: 100%;
+    width: 450px;
   }
 }
 
