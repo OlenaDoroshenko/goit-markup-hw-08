@@ -1,0 +1,39 @@
+.logo {
+  font-family: $secondary-font;
+  font-weight: 700;
+  @include short-font(24px, 28px);
+  letter-spacing: 0.03em;
+
+  &-web {
+    color: $accent-font-color;
+  }
+
+  &-studio {
+    color: #000000;
+    .footer & {
+      color: $second-accent-font-color;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    @include short-font(26px, 31px);
+  }
+}
+
+//   .header & {
+//     margin-right: 93px;
+//   }
+
+//   &:focus {
+//     font-family: $secondary-font;
+//   }
+
+//   .footer & {
+//     display: block;
+//     margin-bottom: 20px;
+//   }
+// }

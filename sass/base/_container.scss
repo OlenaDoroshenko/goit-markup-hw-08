@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+  padding: 0 15px;
+
+  .heroe & {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .clients &,
+  .team &,
+  .footer &,
+  .portfolio & {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  // .header & {
+  //   display: flex;
+  //   align-items: center;
+  // }
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+
+    .heroe & {
+      padding-left: 204px;
+      padding-right: 204px;
+    }
+
+    .footer & {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+  .container {
+    .footer & {
+      padding-left: 76px;
+      padding-right: 89px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+
+    .heroe & {
+      padding-top: 200px;
+      padding-bottom: 200px;
+      padding-left: 250px;
+      padding-right: 250px;
+    }
+
+    .clients &,
+    .team &,
+    .portfolio & {
+      padding-top: 94px;
+      padding-bottom: 94px;
+    }
+  }
+}

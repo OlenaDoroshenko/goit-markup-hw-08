@@ -1,0 +1,94 @@
+.footer {
+  background-color: $background-color;
+  text-align: center;
+
+  &-list-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &-list-street {
+    @include font(400, 14px, 1.714, 00.03em);
+    font-style: normal;
+    color: $second-accent-font-color;
+
+    &:focus {
+      font-style: normal;
+    }
+  }
+  &-list-link {
+    font-style: normal;
+    @include font(400, 14px, 1.714, 0.03em);
+    color: rgba(255, 255, 255, 0.6);
+    &:focus {
+      font-style: normal;
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 20px;
+    @include font(700, 14px, 1.143, 0.03em);
+    text-transform: uppercase;
+    color: $second-accent-font-color;
+  }
+  &-input {
+    display: inline-block;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 450px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    color: $second-accent-font-color;
+  }
+}
+
+.newsletter {
+  &-svg {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-info,
+  .social-links {
+    margin-bottom: 60px;
+  }
+
+  .footer {
+    &-input {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+  .newsletter {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-input {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .footer {
+    text-align: start;
+
+    &-input {
+      width: 358px;
+    }
+  }
+}

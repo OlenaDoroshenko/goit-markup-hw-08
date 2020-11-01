@@ -1,0 +1,11 @@
+@mixin font($fw, $fz, $lh, $ls) {
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+@mixin short-font($fz, $lh) {
+  font-size: $fz;
+  line-height: $lh/$fz;
+}

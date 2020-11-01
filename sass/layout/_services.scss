@@ -1,0 +1,33 @@
+.services {
+  padding-bottom: 94px;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      position: relative;
+    }
+
+    &-description {
+      position: absolute;
+      bottom: 0;
+
+      padding-top: 27px;
+      padding-bottom: 27px;
+      width: 100%;
+      @include font(700, 14px, 1.14, 0.03em);
+      text-align: center;
+      text-transform: uppercase;
+
+      color: $second-accent-font-color;
+      background-color: rgba(47, 48, 58, 0.8);
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .services {
+    display: none;
+  }
+}

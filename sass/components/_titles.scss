@@ -1,0 +1,11 @@
+.titles {
+  margin-bottom: 30px;
+  @include font(700, 28px, 1.179, 00.03em);
+  text-align: center;
+  color: $secondary-font-color;
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 50px;
+    @include short-font(36px, 42px);
+  }
+}
