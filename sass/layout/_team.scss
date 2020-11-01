@@ -1,4 +1,7 @@
 .team {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
   background-color: $second-bg-color;
   text-align: center;
 
@@ -55,6 +58,9 @@
 
 @media screen and (min-width: 1200px) {
   .team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
     &-list-content {
       padding-bottom: 30px;
     }

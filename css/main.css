@@ -37,7 +37,6 @@ img {
 }
 
 .container {
-  background-color: yellowgreen;
   width: 100%;
   padding: 0 15px;
 }
@@ -47,14 +46,6 @@ img {
   padding-bottom: 118px;
   padding-left: 60px;
   padding-right: 60px;
-}
-
-.clients .container,
-.team .container,
-.footer .container,
-.portfolio .container {
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 
 @media screen and (min-width: 480px) {
@@ -68,7 +59,7 @@ img {
   .container {
     width: 768px;
   }
-  .heroe .container {
+  .container .heroe {
     padding-left: 204px;
     padding-right: 204px;
   }
@@ -95,12 +86,6 @@ img {
     padding-bottom: 200px;
     padding-left: 250px;
     padding-right: 250px;
-  }
-  .clients .container,
-  .team .container,
-  .portfolio .container {
-    padding-top: 94px;
-    padding-bottom: 94px;
   }
 }
 
@@ -445,6 +430,8 @@ img {
 }
 
 .team {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #f5f4fa;
   text-align: center;
 }
@@ -499,8 +486,24 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
   .team-list-content {
     padding-bottom: 30px;
+  }
+}
+
+.clients {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .clients {
+    padding-top: 94px;
+    padding-bottom: 94px;
   }
 }
 
@@ -562,6 +565,8 @@ img {
 }
 
 .footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #2f303a;
   text-align: center;
 }
