@@ -1,8 +1,6 @@
 .container {
-  outline: 2px solid red;
   width: 100%;
   padding: 0 15px;
-  margin: 0 auto;
 
   .heroe & {
     padding-top: 118px;
@@ -20,6 +18,7 @@
 @media screen and (min-width: 480px) {
   .container {
     width: 480px;
+    margin: 0 auto;
   }
 }
 
