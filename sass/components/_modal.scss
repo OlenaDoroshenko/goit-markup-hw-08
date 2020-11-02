@@ -1,172 +1,204 @@
-// .backdrop {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
 
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 
-//   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//   &.is-hidden {
-//     opacity: 0;
-//     visibility: hidden;
-//     pointer-events: none;
-//     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms;
-//   }
-// }
+  @media screen and (max-width: 499px) {
+    padding: 93px 15px;
+  }
 
-// .modal {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%) scale(1) rotate(360deg);
-//   padding: 40px;
-//   width: 528px;
-//   height: 581px;
-//   background-color: $second-accent-font-color;
-//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-//     0px 2px 1px rgba(0, 0, 0, 0.2);
-//   border-radius: 4px;
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms;
+  }
+}
 
-//   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+.modal {
+  padding: 40px;
+  width: 100%;
 
-//   .backdrop.is-hidden & {
-//     transform: translate(-50%, -50%) scale(0);
-//     transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-//   }
+  background-color: $second-accent-font-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: scale(1) rotate(360deg);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
-//   &-title {
-//     margin-bottom: 12px;
-//     font-weight: 700;
-//     font-size: 20px;
-//     line-height: 1.15;
-//     text-align: center;
-//     letter-spacing: 0.03em;
-//     color: $secondary-font-color;
-//   }
-//   &-form {
-//     text-align: center;
-//     &-icon {
-//       position: absolute;
-//       top: 50%;
-//       left: 12px;
-//       transform: translateY(-50%);
-//       width: 18px;
-//       height: 18px;
-//       fill: $secondary-font-color;
+  @media screen and (min-width: 500px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    max-width: 450px;
+  }
 
-//       transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
+  }
 
-//       .modal-input:focus + & {
-//         fill: $accent-font-color;
-//       }
-//     }
-//     &-link {
-//       text-decoration: underline;
-//       color: $accent-font-color;
-//     }
-//     &-field-wrapper {
-//       display: block;
-//       margin-top: 4px;
-//       position: relative;
-//     }
-//   }
-//   &-input {
-//     padding-left: 42px;
-//     width: 100%;
-//     height: 40px;
-//     border: 1px solid rgba(33, 33, 33, 0.2);
-//     border-radius: 4px;
-//     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .backdrop.is-hidden & {
+    transform: scale(0);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//     &:focus {
-//       outline: none;
-//       border-color: $accent-font-color;
-//     }
-//   }
+    @media screen and (min-width: 480px) {
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
 
-//   &-field {
-//     display: block;
-//     margin-bottom: 10px;
-//     text-align: start;
+  &-title {
+    margin-bottom: 12px;
+    font-weight: 700;
+    @include short-font(20px, 30px);
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $secondary-font-color;
 
-//     font-weight: 400;
-//     font-size: 12px;
-//     line-height: 1.17;
-//     letter-spacing: 0.01em;
-//     color: $primary-font-color;
+    @media screen and (min-width: 1200px) {
+      @include short-font(20px, 23px);
+    }
+  }
 
-//     &_message {
-//       margin-bottom: 20px;
-//     }
-//   }
-// }
+  &-form {
+    text-align: center;
+    &-icon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      fill: $secondary-font-color;
 
-// .check-policy-label {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin-bottom: 30px;
-//   @include font(400, 14px, 1.71, 0.03em);
-//   color: $primary-font-color;
-// }
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-// .icon {
-//   content: "";
-//   display: inline-block;
-//   margin-right: 7px;
-//   width: 16px;
-//   height: 15px;
-//   border: 2px solid $secondary-font-color;
-//   border-radius: 2px;
+      .modal-input:focus + & {
+        fill: $accent-font-color;
+      }
+    }
 
-//   .modal-form-policy:checked + & {
-//     border-color: $accent-font-color;
-//     background-color: $accent-font-color;
-//     background-image: url(../images/checkbox.svg);
-//     background-size: contain;
-//     background-origin: border-box;
-//   }
-// }
+    &-link {
+      text-decoration: underline;
+      color: $accent-font-color;
+    }
+    &-field-wrapper {
+      display: block;
+      margin-top: 4px;
+      position: relative;
+    }
+  }
 
-// .textarea {
-//   margin-top: 4px;
-//   padding: 12px 16px;
-//   width: 100%;
-//   height: 120px;
-//   resize: none;
-//   border: 1px solid rgba(33, 33, 33, 0.2);
-//   border-radius: 4px;
+  &-input {
+    padding-left: 42px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-//   &::placeholder {
-//     color: rgba(117, 117, 117, 0.5);
-//   }
-//   &:focus {
-//     outline: none;
-//     border-color: $accent-font-color;
-//   }
-// }
+    &:focus {
+      outline: none;
+      border-color: $accent-font-color;
+    }
+  }
 
-// .close-btn {
-//   position: absolute;
-//   top: 8px;
-//   right: 8px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
+  &-field {
+    display: block;
+    margin-bottom: 10px;
+    text-align: start;
 
-//   width: 30px;
-//   height: 30px;
-//   border-radius: 50%;
-//   border: 1px solid rgba(0, 0, 0, 0.1);
-//   background-color: $second-accent-font-color;
-//   cursor: pointer;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: $primary-font-color;
 
-//   &-svg {
-//     width: 11px;
-//     height: 11px;
-//     fill: #000000;
-//   }
-// }
+    &_message {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.check-policy-label {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 30px;
+  @include font(400, 12px, 1.67, 0.03em);
+  color: $primary-font-color;
+
+  @media screen and (min-width: 1200px) {
+    @include short-font(14px, 24px);
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  flex-grow: 0;
+  content: "";
+  display: inline-block;
+  margin-right: 7px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $secondary-font-color;
+  border-radius: 2px;
+
+  .modal-form-policy:checked + & {
+    border-color: $accent-font-color;
+    background-color: $accent-font-color;
+    background-image: url(../images/checkbox.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: border-box;
+  }
+}
+
+.textarea {
+  margin-top: 4px;
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+  &:focus {
+    outline: none;
+    border-color: $accent-font-color;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $second-accent-font-color;
+  cursor: pointer;
+
+  &-svg {
+    width: 11px;
+    height: 11px;
+    fill: #000000;
+  }
+}
