@@ -228,7 +228,7 @@ img {
   position: relative;
   padding-top: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #ececec;
 }
 
 @media screen and (min-width: 768px) {
@@ -506,7 +506,6 @@ img {
 }
 
 .portfolio {
-  background-color: yellow;
   padding-top: 60px;
   padding-bottom: 60px;
 }
