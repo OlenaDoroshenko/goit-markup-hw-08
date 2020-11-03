@@ -628,6 +628,12 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (max-width: 767px) {
+  .address-list-link {
+    justify-content: center;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .address-list-link {
     font-size: 12px;
@@ -1091,6 +1097,11 @@ img {
   color: #ffffff;
 }
 
+.footer-input:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
 .newsletter-svg {
   margin-left: 10px;
   width: 24px;
@@ -1113,6 +1124,13 @@ img {
   }
 }
 
+@media screen and (min-width: 767px) {
+  .newsletter-form {
+    display: flex;
+    align-items: center;
+  }
+}
+
 @media screen and (min-width: 767px) and (max-width: 1199px) {
   .newsletter {
     margin-left: auto;
@@ -1120,9 +1138,7 @@ img {
     margin-top: 60px;
   }
   .newsletter-form {
-    display: flex;
     flex-direction: column;
-    align-items: center;
   }
   .newsletter-input {
     margin-bottom: 20px;
@@ -1135,6 +1151,7 @@ img {
   }
   .footer-input {
     width: 358px;
+    margin-right: 12px;
   }
 }
 /*# sourceMappingURL=main.css.map */
