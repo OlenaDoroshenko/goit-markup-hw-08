@@ -1,38 +1,35 @@
 .header {
   position: relative;
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
   padding-top: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #ececec;
 
   @media screen and (min-width: 768px) {
-    .header {
-      padding-top: 21px;
-      padding-bottom: 21px;
-    }
+    padding-top: 21px;
+    padding-bottom: 21px;
   }
 
   @media screen and (min-width: 1200px) {
-    .header {
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 
 .navigation {
-  .header & {
-    display: flex;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
     justify-content: space-between;
-    align-items: center;
   }
 
   &-list {
     @media screen and (max-width: 767px) {
       margin-bottom: 60px;
+    }
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -40,6 +37,11 @@
     @media screen and (max-width: 767px) {
       &:not(:last-child) {
         margin-bottom: 40px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      &:not(:last-child) {
+        margin-right: 50px;
       }
     }
   }
@@ -53,41 +55,46 @@
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+    @media screen and (min-width: 768px) {
+      @include short-font(14px, 16px);
+      position: relative;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
     &:hover,
     &:focus {
       color: $accent-font-color;
-
-      @media screen and (min-width: 768px) {
-        @include short-font(14px, 16px);
-      }
     }
   }
 }
 
 .menu-container {
-  padding-top: 60px;
-  padding-bottom: 60px;
   text-align: center;
   z-index: 2;
-
-  background-color: $second-accent-font-color;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
-    0px 1px 3px rgba(0, 0, 0, 0.16);
-
-  &.is-open {
-    display: block;
-  }
 
   @media screen and (max-width: 767px) {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
     width: 100%;
+
+    background-color: $second-accent-font-color;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 1px 3px rgba(0, 0, 0, 0.16);
   }
+
+  &.is-open {
+    display: block;
+  }
+
   @media screen and (min-width: 768px) {
     display: flex;
     flex-grow: 1;
+    justify-content: space-between;
   }
 }
 
@@ -119,64 +126,54 @@
     display: none;
   }
 }
-
-//   &-list {
-//     display: flex;
-//     align-items: center;
-
-//     &-item:not(:last-child) {
-//       margin-right: 50px;
-//     }
-
-//     &-link {
-//       position: relative;
-
-//       padding-top: 31px;
-//       padding-bottom: 31px;
-
-//     }
-//   }
-// }
-
 .address {
-  //   .header & {
-  //     margin-left: auto;
-  //   }
-  //   &-list {
-  //     display: flex;
-  //   }
-  &-list-item {
-    &:not(:last-child) {
-      margin-bottom: 16px;
+  &-list {
+    @media screen and (min-width: 768px) {
+      text-align: start;
     }
-
+    @media screen and (min-width: 1200px) {
+      display: flex;
+    }
+  }
+  &-list-item {
     @media screen and (max-width: 767px) {
       &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      &:not(:last-child) {
         margin-bottom: 10px;
+      }
+    }
+    @media screen and (min-width: 1200px) {
+      &:not(:last-child) {
+        margin-right: 30px;
       }
     }
   }
 
   &-list-link {
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    align-items: center;
     font-style: normal;
     @include font(500, 18px, 1.167, 0.02em);
     color: $primary-font-color;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+    @media screen and (min-width: 768px) {
+      @include short-font(12px, 14px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      @include short-font(14px, 16px);
+    }
+
     &:hover,
     &:focus {
       color: $accent-font-color;
     }
-  }
-
-  @media screen and (min-width: 768px) {
-    @include short-font(12px, 14px);
-  }
-
-  @media screen and (min-width: 1200px) {
-    @include short-font(14px, 16px);
   }
 }
 
@@ -197,6 +194,9 @@
     @media screen and (max-width: 767px) {
       left: 0;
     }
+    // @media screen and (min-width: 768px) {
+    //   bottom: -1px;
+    // }
   }
 
   @media screen and (max-width: 767px) {
@@ -206,12 +206,43 @@
 
 .icon-address-svg {
   margin-right: 10px;
-  // fill: $primary-font-color;
+  fill: $primary-font-color;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   .address-list-link:hover &,
   .address-list-link:focus & {
     fill: $accent-font-color;
+  }
+
+  @media screen and (max-width: 767px) {
+    &-mail {
+      width: 16px;
+      height: 11px;
+    }
+    &-tel {
+      width: 10px;
+      height: 15px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &-mail {
+      width: 14px;
+      height: 10px;
+    }
+    &-tel {
+      width: 10px;
+      height: 14px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &-mail {
+      width: 16px;
+      height: 12px;
+    }
+    &-tel {
+      width: 10px;
+      height: 16px;
+    }
   }
 }

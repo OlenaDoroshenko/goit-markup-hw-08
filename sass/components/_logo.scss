@@ -16,21 +16,28 @@
       margin-bottom: 20px;
     }
   }
+
+  &:focus {
+    font-family: $secondary-font;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .logo {
     @include short-font(26px, 31px);
+    .header & {
+      margin-right: 88px;
+    }
   }
 }
 
-//   .header & {
-//     margin-right: 93px;
-//   }
-
-//   &:focus {
-//     font-family: $secondary-font;
-//   }
+@media screen and (min-width: 1200px) {
+  .logo {
+    .header & {
+      margin-right: 93px;
+    }
+  }
+}
 
 //   .footer & {
 //     display: block;
